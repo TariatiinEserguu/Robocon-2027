@@ -1,7 +1,6 @@
 # Robocon-2027
 
-Robocon-д орж буй бүx нигэрт зориулав
-*(Dedicated to everyone taking part in Robocon.)*
+Robocon-2027
 
 Firmware for **R1**, our robot for **ABU Robocon 2027**. R1 is a **4-wheel swerve-drive** robot with a pneumatic gripper/lift mechanism, a conveyor and an arm, driven over Bluetooth with a game controller.
 
