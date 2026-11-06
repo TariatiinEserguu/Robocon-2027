@@ -178,7 +178,3 @@ Suggested order: **motors → encoders → single targets → step response → 
 - On a 30-pin DevKit (no GPIO0 on the header), tie /OE to GND and set `SR_OE = -1`.
 - Use **one common ground** for the ESP32, ESCs, H-bridges and the valve driver.
 - /OE is held high until the shift register has latched all zeros, so the valves and H-bridges stay off during boot.
-
----
-
-Made for PISDAAAAAAAAAAA
