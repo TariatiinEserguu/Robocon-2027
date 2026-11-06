@@ -1,7 +1,5 @@
 # Robocon-2027
 
-Robocon-2027
-
 Firmware for **R1**, our robot for **ABU Robocon 2027**. R1 is a **4-wheel swerve-drive** robot with a pneumatic gripper/lift mechanism, a conveyor and an arm, driven over Bluetooth with a game controller.
 
 All of it runs on **one ESP32**. The robot used to have two boards (`r1-controller` and `r1-servo`, linked over I2C). They have been merged into a single sketch, `r1-main`.
@@ -48,21 +46,21 @@ Robocon-2027/
 | Drive           | 4× ESC (servo-style PWM, 1000–2000 µs, 50 Hz)            | LEDC ch 0–3                                 |
 | Steering        | 4× DC motor + H-bridge, 4× quadrature encoder            | LEDC ch 6–9 (PWM) + shift register (dir)    |
 | Upper mechanism | Conveyor DC motor, arm DC motor (H-bridges)              | LEDC ch 4–5 (PWM) + shift register (dir)    |
-| Pneumatics      | 7 solenoid valves: RAISE, EXTEND, GRAB, W-LIFT, W-TILT, W-GRAB1, W-GRAB2 | shift register U1                 |
+| Pneumatics      | 7 solenoid valves: RAISE, EXTEND, GRAB, W-LIFT, W-TILT, W-GRAB1, W-GRAB2 | shift register U1 |
 | I/O expansion   | 3× 74HC595 daisy chain (U1 → U2 → U3)                    | SPI (HSPI)                                  |
 | Input           | Bluetooth gamepad (DualShock 4, DualSense, Xbox, etc.)   | Bluepad32                                   |
 
 ### Pin summary
 
-| GPIO          | Function                         |
-|---------------|----------------------------------|
-| 4, 13, 19, 21 | ESC 0–3 signal                   |
-| 17, 16, 27, 14| Steering H-bridge 0–3 PWM        |
-| 39/36, 35/34, 33/32, 26/25 | Encoder 0–3 A/B     |
-| 22            | Conveyor PWM                     |
-| 2             | Arm PWM                          |
-| 23 / 18 / 5   | 595 DATA / CLK / LATCH           |
-| 0             | 595 /OE (10 kΩ pull-up to 3V3)   |
+| GPIO                       | Function                       |
+|----------------------------|--------------------------------|
+| 4, 13, 19, 21              | ESC 0–3 signal                 |
+| 17, 16, 27, 14             | Steering H-bridge 0–3 PWM      |
+| 39/36, 35/34, 33/32, 26/25 | Encoder 0–3 A/B                |
+| 22                         | Conveyor PWM                   |
+| 2                          | Arm PWM                        |
+| 23 / 18 / 5                | 595 DATA / CLK / LATCH         |
+| 0                          | 595 /OE (10 kΩ pull-up to 3V3) |
 
 ### Shift-register bit map (24 bits)
 
