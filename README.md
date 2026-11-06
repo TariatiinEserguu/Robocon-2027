@@ -25,7 +25,7 @@ All of it runs on **one ESP32**. The robot used to have two boards (`r1-controll
 
 ```
 Robocon-2027/
-└── r1-main/r1-main/
+└── r1-main/
     ├── r1-main.ino      # entry point: gamepad → swerve kinematics → commands
     ├── config.h         # ALL pins, channels and tuning values in one place
     ├── control.h        # 100 Hz control task: PID, ESCs, motors, valves
@@ -70,9 +70,9 @@ Robocon-2027/
 | 8–11  | U2   | Conveyor INA/INB, arm INA/INB                                 |
 | 16–23 | U3   | Steering INA/INB for modules 0, 1, 3, 2                       |
 
-See **[`WIRING.md`](r1-main/r1-main/WIRING.md)** for the full table, the old-board → new-board rewiring checklist and the schematic:
+See **[`WIRING.md`](r1-main/WIRING.md)** for the full table, the old-board → new-board rewiring checklist and the schematic:
 
-![R1 wiring](r1-main/r1-main/r1-wiring.png)
+![R1 wiring](r1-main/r1-wiring.png)
 
 ## Software architecture
 
@@ -128,7 +128,7 @@ The buttons use Bluepad32's Xbox-style names. On a PlayStation controller **A = 
 3. Pick **Tools → Board → esp32_bluepad32 → ESP32 Dev Module**.
    ⚠️ There are *two* "ESP32 Dev Module" entries. The one under the plain Espressif `esp32` package will not build: the sketch stops with `#error "Wrong board..."`.
 4. If you installed the **"Bluepad32" library** from the Library Manager, **uninstall it**. That one is for NINA boards, not the ESP32.
-5. Open `r1-main/r1-main/r1-main.ino`, select the port and click **Upload**. No other libraries are needed.
+5. Open `r1-main/r1-main.ino`, select the port and click **Upload**. No other libraries are needed.
 6. Open the Serial Monitor at **115200 baud**. You should see `R1 single-controller ready.`
 7. Put the gamepad in pairing mode. Only the first controller to connect is used.
 
@@ -136,7 +136,7 @@ The buttons use Bluepad32's Xbox-style names. On a PlayStation controller **A = 
 
 ## Configuration and tuning
 
-Every pin and constant is in **[`config.h`](r1-main/r1-main/config.h)** (namespace `Cfg`). The values you are most likely to change:
+Every pin and constant is in **[`config.h`](r1-main/config.h)** (namespace `Cfg`). The values you are most likely to change:
 
 | Constant                 | Default            | Meaning                                                  |
 |--------------------------|--------------------|----------------------------------------------------------|
